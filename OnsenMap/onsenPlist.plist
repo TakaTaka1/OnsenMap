@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>place</key>
+	<array>
+		<dict>
+			<key>image</key>
+			<string>img_yuuCity.jpg</string>
+			<key>Location</key>
+			<string>東京</string>
+			<key>NAME</key>
+			<string>ゆーシティ</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>kaiseiyu.jpg</string>
+			<key>Location</key>
+			<string>東京</string>
+			<key>NAME</key>
+			<string>改正湯</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string></string>
+			<key>Location</key>
+			<string>東京</string>
+			<key>NAME</key>
+			<string>大森湯</string>
+		</dict>
+	</array>
+</dict>
+</plist>
