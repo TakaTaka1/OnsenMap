@@ -10,10 +10,10 @@
 
 @interface DetailView : UIViewController
 
-@property (nonatomic,strong) NSDictionary *arpic;
+@property (nonatomic,strong) NSString *arpic;
 @property (nonatomic,assign) int selectNum;
 @property (weak, nonatomic) IBOutlet UILabel *MyLabel;
-@property (nonatomic,strong) NSArray *PlaceList;
+@property (nonatomic,strong) NSString *PlaceList;
 @property (weak, nonatomic) IBOutlet UIImageView *MyPic;
 
 @end

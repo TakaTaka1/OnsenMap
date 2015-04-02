@@ -24,9 +24,11 @@
     
     self.MyLabel.text=[NSString stringWithFormat:@"%@",self.PlaceList];
     
+    
+    //配列を渡している訳では、なく文字列を渡しているのでこの記述
     self.MyPic.image=[UIImage imageNamed:_arpic];
     
-
+    
     
     
 }
