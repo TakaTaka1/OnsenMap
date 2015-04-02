@@ -15,16 +15,6 @@
 
 @implementation DetailView
 
--(void)viewWillAppear:(BOOL)animated{
-
-   
-    self.MyPic.image=[UIImage imageNamed:_arpic];
-    
-
-
-
-}
-
 
 
 - (void)viewDidLoad {
@@ -34,7 +24,9 @@
     
     self.MyLabel.text=[NSString stringWithFormat:@"%@",self.PlaceList];
     
+    self.MyPic.image=[UIImage imageNamed:_arpic];
     
+
     
     
 }
