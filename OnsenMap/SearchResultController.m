@@ -7,8 +7,11 @@
 //
 
 #import "SearchResultController.h"
+#import "ViewController.h"
 
-@interface SearchResultController ()
+@interface SearchResultController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *myTable;
 
 @end
 
@@ -17,7 +20,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _searchedResult=[NSMutableArray arrayWithCapacity:10];
+    
+    [_myTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    _myTable.dataSource=self;
+    
 }
+
+-(void)query:(NSString *)query{
+
+    [_searchedResult removeAllObjects];
+    
+        for (NSString *Result in _allData) {
+            NSRange range=[Result rangeOfString:query];
+        
+        if (range.location !=NSNotFound) {
+            [_searchedResult addObject:Result];
+            
+        }
+        
+    }
+
+    [_myTable reloadData];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return  _searchedResult.count;
+
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    
+    NSString *row=[_searchedResult objectAtIndex:indexPath.row];
+    UITableViewCell *cell=[_myTable dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.textLabel.text=row;
+    return cell;
+
+    
+
+    
+
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
