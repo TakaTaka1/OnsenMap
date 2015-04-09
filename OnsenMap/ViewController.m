@@ -21,6 +21,7 @@
 
 @property (strong,nonatomic) SearchResultController *searchResult;
 
+@property (strong,nonatomic) NSMutableDictionary *dic1;
 
 @end
 
@@ -32,18 +33,17 @@
     
     NSBundle *bundle=[NSBundle mainBundle];
     NSString *path=[bundle pathForResource:@"onsenPlist" ofType:@"plist"];
-    NSMutableDictionary *dic1=[[NSMutableDictionary alloc]init];
-    dic1=[[NSMutableDictionary dictionaryWithContentsOfFile:path]mutableCopy];
+    _dic1=[[NSMutableDictionary dictionaryWithContentsOfFile:path]mutableCopy];
     //_searchData=[[NSMutableArray alloc]init];
     //_inf=[NSMutableArray arrayWithCapacity:100];
-    _inf=[dic1 objectForKey:@"place"];
+    _inf=[_dic1 objectForKey:@"place"];
     
     
     
     ///////////storyboardからViewを取得　 _infのデータを_searchResult.alldataに渡す
     UIStoryboard *sb=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     _searchResult=[sb instantiateViewControllerWithIdentifier:@"SearchResultController"];
-    _searchResult.allData=_inf;
+    _searchResult.allData= _inf; ////この渡し方が間違っている？
     
     
     

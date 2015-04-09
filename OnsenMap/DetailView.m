@@ -16,7 +16,6 @@
 @implementation DetailView
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -28,10 +27,32 @@
     //配列を渡している訳では、なく文字列を渡しているのでこの記述
     self.MyPic.image=[UIImage imageNamed:_arpic];
     
+    UIButton *btn=[[UIButton alloc]init];
     
+    btn.frame=CGRectMake(190, 510, 60, 60);
+    
+    
+    UIImage *btn_1=[UIImage imageNamed:@"oomoriyu.jpg"];
+    
+    [btn setBackgroundImage:btn_1 forState:UIControlStateNormal];
+    
+    [btn addTarget:self action:@selector(pushed_btn:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:btn];
+    
+}
+
+
+
+-(void)pushed_btn: (id)sender{
+    
+    
+    NSLog(@"tap");
     
     
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
