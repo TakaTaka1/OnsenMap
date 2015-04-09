@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
-{NSArray *inf;}
-@property (weak, nonatomic) IBOutlet UITableView *MytableView;
-
+@interface ViewController : UIViewController
+//{NSArray *inf;
+// NSMutableArray *searchData;
+//    
+//}
 
 @end
 

@@ -8,8 +8,19 @@
 
 #import "ViewController.h"
 #import "DetailView.h"
+#import "SearchResultController.h"
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UISearchControllerDelegate>
 
-@interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *MytableView;
+
+@property (strong,nonatomic) NSMutableArray *searchData;
+
+@property (strong,nonatomic) UISearchController *searchController;
+
+@property (strong,nonatomic) NSMutableArray *inf;
+
+@property (strong,nonatomic) SearchResultController *searchResult;
+
 
 @end
 
@@ -20,28 +31,45 @@
     
     
     NSBundle *bundle=[NSBundle mainBundle];
-    
     NSString *path=[bundle pathForResource:@"onsenPlist" ofType:@"plist"];
-    
     NSMutableDictionary *dic1=[[NSMutableDictionary alloc]init];
-    
-//    NSDictionary *dic=[NSDictionary dictionaryWithContentsOfFile:path];
-
     dic1=[[NSMutableDictionary dictionaryWithContentsOfFile:path]mutableCopy];
+    //_searchData=[[NSMutableArray alloc]init];
+    _inf=[NSMutableArray arrayWithCapacity:100];
+    _inf=[dic1 objectForKey:@"place"];
     
-    inf=[[NSArray alloc]init];
+   
+    UIStoryboard *sb=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    _searchResult=[sb instantiateViewControllerWithIdentifier:@"SearchResultController"];
+    _searchResult.allData=_inf;
     
-    inf=[dic1 objectForKey:@"place"];
+    _searchController=[[UISearchController alloc]initWithSearchResultsController:_searchResult];
+    _searchController.searchBar.frame=CGRectMake(0, 0, self.view.bounds.size.width, 44);
+    _searchController.searchBar.returnKeyType=UIReturnKeyDone;
+    _searchController.searchBar.placeholder=@"Search";
+    _searchController.searchBar.delegate=self;
+    
+    [_MytableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    _MytableView.dataSource=self;
+    _MytableView.delegate=self;
+    _MytableView.tableHeaderView=_searchController.searchBar;
     
     
-    self.MytableView.delegate=self;
-    self.MytableView.dataSource=self;
+    //_searchData=[NSMutableArray arrayWithCapacity:_inf.count];
     
     
+//    UISearchBar *bar=[[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+//    bar.delegate=self;
+//    bar.searchResultsButtonSelected=self;
+//
+//self.MytableView.tableHeaderView=bar;
+
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return inf.count;
+    
+    
+        return _inf.count;
     
 }
 
@@ -53,9 +81,12 @@
     
     if(cell==nil){
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+        
     }
     
-    cell.textLabel.text=inf[indexPath.row][@"NAME"];
+    
+        cell.textLabel.text=_inf[indexPath.row][@"NAME"];
 
     return cell;}
 
@@ -68,9 +99,9 @@
     
     detail.selectNum=(int)indexPath.row;
     
-    detail.arpic=inf[indexPath.row][@"image"];
+    detail.arpic=_inf[indexPath.row][@"image"];
     
-    detail.PlaceList=inf[indexPath.row][@"Location"];
+    detail.PlaceList=_inf[indexPath.row][@"Location"];
    
     [[self navigationController]pushViewController:detail animated:YES];
     
@@ -78,6 +109,43 @@
     
     
 }
+
+//-(void)filterContentForSearchText:(NSString *)searchString scope:(NSString *)scope{
+//    [_searchData removeAllObjects];
+//    
+//    for(NSString *label in _inf){
+//    
+//        NSRange range=[label rangeOfString:searchString options:NSCaseInsensitiveSearch];
+//    
+//        if(range.length>0){
+//        
+//        [_searchData addObject:label];
+//        
+//        
+//        }
+//    
+//    }
+//
+//}
+
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+   // [_searchResult query:searchText];
+  
+
+}
+
+
+//
+//-(void)searchBarSearchButtonClicked:(UISearchBar *)bar{
+// 
+//    NSLog(@"tap");
+//    
+//    
+//
+//}
+
 
 
 
