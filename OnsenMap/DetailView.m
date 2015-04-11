@@ -8,6 +8,7 @@
 
 #import "DetailView.h"
 #import "ViewController.h"
+#import "SearchResultController.h"
 
 @interface DetailView ()
 

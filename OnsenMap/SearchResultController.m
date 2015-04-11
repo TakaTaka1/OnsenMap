@@ -8,6 +8,7 @@
 
 #import "SearchResultController.h"
 #import "ViewController.h"
+#import "DetailView.h"
 
 @interface SearchResultController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -29,7 +30,7 @@
 
 -(void)query:(NSString *)query{
 
-    [_searchedResult removeAllObjects];
+   [_searchedResult removeAllObjects];
     
         for (NSString *Result in _allData) {
             NSRange range=[Result rangeOfString:query];
@@ -58,12 +59,23 @@
     cell.textLabel.text=row;
     return cell;
 
-    
-
-    
-
 
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    DetailView *detail2=[self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+    detail2.arpic=_allData[indexPath.row][@"image"];
+    detail2.PlaceList=_allData[indexPath.row][@"Location"];
+    [[self navigationController]pushViewController:detail2 animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+}
+
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

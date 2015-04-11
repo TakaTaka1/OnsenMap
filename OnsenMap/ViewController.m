@@ -27,6 +27,9 @@
 
 @implementation ViewController
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -39,12 +42,11 @@
     _inf=[_dic1 objectForKey:@"place"];
     
     
-    
     ///////////storyboardからViewを取得　 _infのデータを_searchResult.alldataに渡す
+     ////この渡し方が間違っている？
     UIStoryboard *sb=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     _searchResult=[sb instantiateViewControllerWithIdentifier:@"SearchResultController"];
-    _searchResult.allData= _inf; ////この渡し方が間違っている？
-    
+    _searchResult.allData= _inf;
     
     
     ///////////searchbarの実装 searchControllerを生成
@@ -85,7 +87,6 @@
     
     cell.textLabel.text=_inf[indexPath.row][@"NAME"];
     
-    
 //    NSString *row=[_inf[indexPath.row][@"NAME"] objectAtIndex:indexPath.row];
 //    
 //    UITableViewCell *cell=[_MytableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
@@ -101,7 +102,7 @@
 
     
     DetailView *detail=[self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
-    detail.selectNum=(int)indexPath.row;
+    //detail.selectNum=(int)indexPath.row;
     detail.arpic=_inf[indexPath.row][@"image"];
     detail.PlaceList=_inf[indexPath.row][@"Location"];
     [[self navigationController]pushViewController:detail animated:YES];
@@ -116,7 +117,7 @@
     
     
     ///////////エラーが起きる箇所
-    [_searchResult query:searchText];
+    //[_searchResult query:searchText];
     
 
 }
