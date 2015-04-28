@@ -88,8 +88,10 @@
 //    detail2.PlaceList=_allData[indexPath.row][@"Location"];
 //    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    [[self navigationController]pushViewController:detail2 animated:YES];
-//    
-
+//
+    
+    
+    //値が渡らず　
     [self performSegueWithIdentifier:@"hoge" sender:self];
 
 
@@ -100,9 +102,9 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
-    DetailView *detail2=[self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+   // DetailView *detail2=[self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
     
-    detail2.PlaceList=[self.myTable indexPathForSelectedRow].row;
+    //detail2.PlaceList=[self.myTable indexPathForSelectedRow].row;
     
     
     
