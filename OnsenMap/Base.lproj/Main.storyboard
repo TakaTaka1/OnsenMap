@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096" y="136"/>
+            <point key="canvasLocation" x="1103" y="-170"/>
         </scene>
         <!--Search Result Controller-->
         <scene sceneID="UXa-c0-d3E">
@@ -52,29 +52,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="B6R-Mz-u3K">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="B6R-Mz-u3K" firstAttribute="top" secondItem="fUo-a8-xsY" secondAttribute="bottom" id="4xQ-EW-Tii"/>
-                            <constraint firstItem="7kU-fZ-3ji" firstAttribute="top" secondItem="B6R-Mz-u3K" secondAttribute="bottom" id="ClK-1b-bVj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="B6R-Mz-u3K" secondAttribute="trailing" constant="-16" id="ENp-2p-RaB"/>
-                            <constraint firstItem="7kU-fZ-3ji" firstAttribute="top" secondItem="B6R-Mz-u3K" secondAttribute="bottom" id="S7E-ZY-zln"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="B6R-Mz-u3K" secondAttribute="trailing" constant="-16" id="aHF-aq-k0J"/>
-                            <constraint firstItem="B6R-Mz-u3K" firstAttribute="leading" secondItem="7wK-Cw-bM2" secondAttribute="leadingMargin" constant="-16" id="eI6-HS-eK6"/>
-                            <constraint firstItem="B6R-Mz-u3K" firstAttribute="leading" secondItem="7wK-Cw-bM2" secondAttribute="leadingMargin" constant="-16" id="mR3-As-KAw"/>
-                            <constraint firstItem="B6R-Mz-u3K" firstAttribute="top" secondItem="fUo-a8-xsY" secondAttribute="bottom" id="rar-nl-grX"/>
+                            <constraint firstItem="7kU-fZ-3ji" firstAttribute="top" secondItem="B6R-Mz-u3K" secondAttribute="bottom" id="aiO-CH-OJL"/>
+                            <constraint firstItem="B6R-Mz-u3K" firstAttribute="leading" secondItem="7wK-Cw-bM2" secondAttribute="leadingMargin" constant="-16" id="gEm-oB-GPJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B6R-Mz-u3K" secondAttribute="trailing" constant="-16" id="oox-m1-UK9"/>
+                            <constraint firstItem="B6R-Mz-u3K" firstAttribute="top" secondItem="7wK-Cw-bM2" secondAttribute="topMargin" id="uxo-sU-CDT"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="uaA-XE-avk"/>
                     <connections>
                         <outlet property="myTable" destination="B6R-Mz-u3K" id="znN-Xz-mcr"/>
+                        <segue destination="Pag-wQ-bs8" kind="show" identifier="hoge" id="bWd-ff-j8s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cn6-Rr-kDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101" y="798"/>
+            <point key="canvasLocation" x="1103" y="495"/>
         </scene>
         <!--Detail View-->
         <scene sceneID="8uw-UA-XJF">
@@ -124,6 +122,7 @@
                             <constraint firstItem="nhL-5K-gaP" firstAttribute="leading" secondItem="zSz-du-KTJ" secondAttribute="leadingMargin" constant="134" id="zYN-tp-Vsn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Vnl-qK-j6S"/>
                     <connections>
                         <outlet property="MyLabel" destination="wZ4-6l-oQM" id="DvA-T5-zk1"/>
                         <outlet property="MyPic" destination="xjZ-q7-SJX" id="WiZ-jI-oNj"/>
@@ -131,25 +130,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOc-cK-PQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759" y="136"/>
+            <point key="canvasLocation" x="1882" y="190"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zXN-Lz-Z6x">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wfL-Tp-Ff5" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="MST-FS-bqW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lom-Gi-5J6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="zkv-uG-dZG"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="658-9x-CZl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEc-14-G3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="459" y="136"/>
+            <point key="canvasLocation" x="229" y="31"/>
         </scene>
     </scenes>
 </document>
