@@ -15,7 +15,7 @@
 @end
 
 @implementation DetailView
-
+//add
 
 - (void)viewDidLoad {
     [super viewDidLoad];

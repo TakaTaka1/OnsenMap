@@ -102,6 +102,8 @@
     [[self navigationController]pushViewController:detail animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+  
+    //add
     
 }
 
