@@ -17,3 +17,4 @@
 @property (weak, nonatomic) IBOutlet UIImageView *MyPic;
 @property (nonatomic,strong) NSString *recive;
 @end
+//add

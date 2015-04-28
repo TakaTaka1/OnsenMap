@@ -12,6 +12,6 @@
 @property (strong,nonatomic) NSMutableArray *allData;
 @property (strong,nonatomic,readonly) NSMutableArray *searchedResult;
 -(void)query:(NSString *)query;
-
+//add
 
 @end
