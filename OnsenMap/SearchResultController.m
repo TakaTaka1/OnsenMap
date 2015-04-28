@@ -18,7 +18,7 @@
 
 @property (nonatomic, retain) UIWindow *window;
 
-//add
+
 @end
 
 @implementation SearchResultController

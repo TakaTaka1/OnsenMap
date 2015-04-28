@@ -12,6 +12,7 @@
 		6D7BAA241ACD866300752EC3 /* kaiseiyu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D7BAA231ACD866200752EC3 /* kaiseiyu.jpg */; };
 		6D7BAA261ACD894E00752EC3 /* oomoriyu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D7BAA251ACD894E00752EC3 /* oomoriyu.jpg */; };
 		6D9E676C1AD6C607007CE766 /* SearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E676B1AD6C607007CE766 /* SearchResultController.m */; };
+		6DA3DA301AF02F28007989CC /* oomoriyu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D7BAA251ACD894E00752EC3 /* oomoriyu.jpg */; };
 		6DB76DDB1AC3DD2A008AB353 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB76DDA1AC3DD2A008AB353 /* CoreLocation.framework */; };
 		6DB76DDD1AC3DD4A008AB353 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB76DDC1AC3DD4A008AB353 /* MapKit.framework */; };
 		6DC6D39A1ACD617500FA4B56 /* img_yuuCity.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DC6D3991ACD617500FA4B56 /* img_yuuCity.jpg */; };
@@ -251,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DA3DA301AF02F28007989CC /* oomoriyu.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
