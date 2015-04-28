@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *MyLabel;
 @property (nonatomic,strong) NSString *PlaceList;
 @property (weak, nonatomic) IBOutlet UIImageView *MyPic;
-
+@property (nonatomic,strong) NSString *recive;
 @end

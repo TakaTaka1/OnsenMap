@@ -14,6 +14,11 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *myTable;
 
+@property (strong,nonatomic) UINavigationController *nav;
+
+@property (nonatomic, retain) UIWindow *window;
+
+
 @end
 
 @implementation SearchResultController
@@ -21,29 +26,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _searchedResult=[NSMutableArray arrayWithCapacity:10];
+    _searchedResult=[NSMutableArray arrayWithCapacity:100];
+    
+
     
     [_myTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     _myTable.dataSource=self;
+    _myTable.delegate=self;
+    //self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    _nav=[[UINavigationController alloc]initWithRootViewController:self];
+    
+    [self.window addSubview:_nav.view];
+    [self.window makeKeyAndVisible];
+//    
     
 }
 
--(void)query:(NSString *)query{
-
-   [_searchedResult removeAllObjects];
-    
-        for (NSString *Result in _allData) {
-            NSRange range=[Result rangeOfString:query];
-        
-        if (range.location !=NSNotFound) {
-            [_searchedResult addObject:Result];
-            
-        }
-        
-    }
-
-    [_myTable reloadData];
-}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
@@ -62,18 +60,53 @@
 
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    DetailView *detail2=[self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
-    detail2.arpic=_allData[indexPath.row][@"image"];
-    detail2.PlaceList=_allData[indexPath.row][@"Location"];
-    [[self navigationController]pushViewController:detail2 animated:YES];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
+-(void)query:(NSString *)query{
+    
+    NSLog(@"tap");
+    
+    [_searchedResult removeAllObjects];
+    
+    /////////エラー箇所　NSString型からNSDictionary型に
+    for (NSDictionary *Result in _allData) {
+        NSRange range=[Result[@"NAME"] rangeOfString:query];
+        
+        if (range.location !=NSNotFound) {
+            [_searchedResult addObject:Result[@"NAME"]];
+            
+        }
+        
+    }
+    
+    [_myTable reloadData];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//  
+//    DetailView *detail2=[self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+//    detail2.arpic=_allData[indexPath.row][@"image"];
+//    detail2.PlaceList=_allData[indexPath.row][@"Location"];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [[self navigationController]pushViewController:detail2 animated:YES];
+//    
+
+    [self performSegueWithIdentifier:@"hoge" sender:self];
 
 
+    NSLog(@"tap");
+  
+   
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    DetailView *detail2=[self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+    
+    detail2.PlaceList=[self.myTable indexPathForSelectedRow].row;
+    
+    
+    
+}
 
 
 
