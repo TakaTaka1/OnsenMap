@@ -81,18 +81,12 @@
     
     if(cell==nil){
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        //cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         
     }
     
     cell.textLabel.text=_inf[indexPath.row][@"NAME"];
     
-//    NSString *row=[_inf[indexPath.row][@"NAME"] objectAtIndex:indexPath.row];
-//    
-//    UITableViewCell *cell=[_MytableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-//    
-//    cell.textLabel.text=row;
-//    
+    
     return cell;}
 
 
@@ -116,8 +110,8 @@
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     
     
-    ///////////エラーが起きる箇所
-    //[_searchResult query:searchText];
+    [_searchResult query:searchText];
+    
     
 
 }
