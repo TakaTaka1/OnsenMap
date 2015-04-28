@@ -80,6 +80,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6DA3DA2E1AF02D4A007989CC /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				6D7BAA231ACD866200752EC3 /* kaiseiyu.jpg */,
+				6D7BAA251ACD894E00752EC3 /* oomoriyu.jpg */,
+				6DC6D3991ACD617500FA4B56 /* img_yuuCity.jpg */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
 		6DC9E0D11AC30855002F4588 = {
 			isa = PBXGroup;
 			children = (
@@ -116,9 +126,7 @@
 				6DC9E0EC1AC30855002F4588 /* LaunchScreen.xib */,
 				6DC9E0DD1AC30855002F4588 /* Supporting Files */,
 				6D2D6F9A1AC8724B00AB1B1A /* onsenPlist.plist */,
-				6DC6D3991ACD617500FA4B56 /* img_yuuCity.jpg */,
-				6D7BAA251ACD894E00752EC3 /* oomoriyu.jpg */,
-				6D7BAA231ACD866200752EC3 /* kaiseiyu.jpg */,
+				6DA3DA2E1AF02D4A007989CC /* Image */,
 			);
 			path = OnsenMap;
 			sourceTree = "<group>";
