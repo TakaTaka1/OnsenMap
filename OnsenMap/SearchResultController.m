@@ -10,6 +10,11 @@
 #import "ViewController.h"
 #import "DetailView.h"
 
+#import "CustomTableViewCell.h"
+#import "const.h"
+
+
+
 @interface SearchResultController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *myTable;
@@ -17,6 +22,7 @@
 @property (strong,nonatomic) UINavigationController *nav;
 
 @property (nonatomic, retain) UIWindow *window;
+
 
 
 @end
@@ -36,25 +42,34 @@
     //self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     _nav=[[UINavigationController alloc]initWithRootViewController:self];
     
+    
     [self.window addSubview:_nav.view];
     [self.window makeKeyAndVisible];
-//    
+//
+    
     
 }
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
+    //return 4;
     return  _searchedResult.count;
 
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    NSLog(@"tapp");
+
+    
     
     NSString *row=[_searchedResult objectAtIndex:indexPath.row];
-    UITableViewCell *cell=[_myTable dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    CustomTableViewCell *cell=[_myTable dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.textLabel.text=row;
+  
+    
+    
     return cell;
 
 
@@ -81,6 +96,15 @@
     [_myTable reloadData];
 }
 
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [CustomTableViewCell rowHeight];
+    
+}
+
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //  
 //    DetailView *detail2=[self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
@@ -99,6 +123,7 @@
   
    
 }
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 

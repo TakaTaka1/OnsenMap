@@ -12,9 +12,10 @@
 
 @property (nonatomic,strong) NSString *arpic;
 @property (nonatomic,assign) int selectNum;
-@property (weak, nonatomic) IBOutlet UILabel *MyLabel;
+@property (strong, nonatomic) IBOutlet UILabel *MyLabel;
 @property (nonatomic,strong) NSString *PlaceList;
-@property (weak, nonatomic) IBOutlet UIImageView *MyPic;
+@property (strong, nonatomic) IBOutlet UIImageView *MyPic;
 @property (nonatomic,strong) NSString *recive;
+
 @end
 //add

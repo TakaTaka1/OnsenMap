@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		6D2D6F9B1AC8724B00AB1B1A /* onsenPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D2D6F9A1AC8724B00AB1B1A /* onsenPlist.plist */; };
 		6D2D6F9E1ACBE53D00AB1B1A /* DetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2D6F9D1ACBE53D00AB1B1A /* DetailView.m */; };
+		6D475B0E1B2CF9A200BA9187 /* OnsenIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D475B0D1B2CF9A200BA9187 /* OnsenIcon.jpg */; };
 		6D7BAA241ACD866300752EC3 /* kaiseiyu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D7BAA231ACD866200752EC3 /* kaiseiyu.jpg */; };
 		6D7BAA261ACD894E00752EC3 /* oomoriyu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D7BAA251ACD894E00752EC3 /* oomoriyu.jpg */; };
+		6D8264441B2CE11C008C74F9 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8264431B2CE11C008C74F9 /* Empty.xib */; };
+		6D8264471B2CE16F008C74F9 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8264461B2CE16F008C74F9 /* CustomTableViewCell.m */; };
+		6D8264541B2CE55B008C74F9 /* const.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8264531B2CE55B008C74F9 /* const.m */; };
 		6D9E676C1AD6C607007CE766 /* SearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E676B1AD6C607007CE766 /* SearchResultController.m */; };
 		6DA3DA301AF02F28007989CC /* oomoriyu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D7BAA251ACD894E00752EC3 /* oomoriyu.jpg */; };
 		6DB76DDB1AC3DD2A008AB353 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB76DDA1AC3DD2A008AB353 /* CoreLocation.framework */; };
@@ -39,8 +43,14 @@
 		6D2D6F9A1AC8724B00AB1B1A /* onsenPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = onsenPlist.plist; sourceTree = "<group>"; };
 		6D2D6F9C1ACBE53D00AB1B1A /* DetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailView.h; sourceTree = "<group>"; };
 		6D2D6F9D1ACBE53D00AB1B1A /* DetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailView.m; sourceTree = "<group>"; };
+		6D475B0D1B2CF9A200BA9187 /* OnsenIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = OnsenIcon.jpg; path = "イメージ/OnsenIcon.jpg"; sourceTree = SOURCE_ROOT; };
 		6D7BAA231ACD866200752EC3 /* kaiseiyu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = kaiseiyu.jpg; path = "イメージ/kaiseiyu.jpg"; sourceTree = SOURCE_ROOT; };
 		6D7BAA251ACD894E00752EC3 /* oomoriyu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = oomoriyu.jpg; path = "イメージ/oomoriyu.jpg"; sourceTree = SOURCE_ROOT; };
+		6D8264431B2CE11C008C74F9 /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
+		6D8264451B2CE16F008C74F9 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		6D8264461B2CE16F008C74F9 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		6D8264521B2CE55B008C74F9 /* const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = const.h; sourceTree = "<group>"; };
+		6D8264531B2CE55B008C74F9 /* const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = const.m; sourceTree = "<group>"; };
 		6D9E676A1AD6C607007CE766 /* SearchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultController.h; sourceTree = "<group>"; };
 		6D9E676B1AD6C607007CE766 /* SearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultController.m; sourceTree = "<group>"; };
 		6DB76DDA1AC3DD2A008AB353 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -81,10 +91,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D8264421B2CE0E1008C74F9 /* CustomTableView */ = {
+			isa = PBXGroup;
+			children = (
+				6D8264431B2CE11C008C74F9 /* Empty.xib */,
+				6D8264451B2CE16F008C74F9 /* CustomTableViewCell.h */,
+				6D8264461B2CE16F008C74F9 /* CustomTableViewCell.m */,
+				6D8264521B2CE55B008C74F9 /* const.h */,
+				6D8264531B2CE55B008C74F9 /* const.m */,
+			);
+			name = CustomTableView;
+			sourceTree = "<group>";
+		};
 		6DA3DA2E1AF02D4A007989CC /* Image */ = {
 			isa = PBXGroup;
 			children = (
 				6D7BAA231ACD866200752EC3 /* kaiseiyu.jpg */,
+				6D475B0D1B2CF9A200BA9187 /* OnsenIcon.jpg */,
 				6D7BAA251ACD894E00752EC3 /* oomoriyu.jpg */,
 				6DC6D3991ACD617500FA4B56 /* img_yuuCity.jpg */,
 			);
@@ -114,6 +137,7 @@
 		6DC9E0DC1AC30855002F4588 /* OnsenMap */ = {
 			isa = PBXGroup;
 			children = (
+				6D8264421B2CE0E1008C74F9 /* CustomTableView */,
 				6DC9E0E71AC30855002F4588 /* Main.storyboard */,
 				6DC9E0E11AC30855002F4588 /* AppDelegate.h */,
 				6DC9E0E21AC30855002F4588 /* AppDelegate.m */,
@@ -239,8 +263,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DC9E0E91AC30855002F4588 /* Main.storyboard in Resources */,
+				6D8264441B2CE11C008C74F9 /* Empty.xib in Resources */,
 				6DC6D39A1ACD617500FA4B56 /* img_yuuCity.jpg in Resources */,
 				6D7BAA261ACD894E00752EC3 /* oomoriyu.jpg in Resources */,
+				6D475B0E1B2CF9A200BA9187 /* OnsenIcon.jpg in Resources */,
 				6D2D6F9B1AC8724B00AB1B1A /* onsenPlist.plist in Resources */,
 				6DC9E0EE1AC30855002F4588 /* LaunchScreen.xib in Resources */,
 				6DC9E0EB1AC30855002F4588 /* Images.xcassets in Resources */,
@@ -265,6 +291,8 @@
 			files = (
 				6DC9E0E61AC30855002F4588 /* ViewController.m in Sources */,
 				6D2D6F9E1ACBE53D00AB1B1A /* DetailView.m in Sources */,
+				6D8264541B2CE55B008C74F9 /* const.m in Sources */,
+				6D8264471B2CE16F008C74F9 /* CustomTableViewCell.m in Sources */,
 				6DC9E0E31AC30855002F4588 /* AppDelegate.m in Sources */,
 				6DC9E0E01AC30855002F4588 /* main.m in Sources */,
 				6D9E676C1AD6C607007CE766 /* SearchResultController.m in Sources */,

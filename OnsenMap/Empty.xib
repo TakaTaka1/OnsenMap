@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="vnq-1Y-j7u" customClass="CustomTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vnq-1Y-j7u" id="AVm-h7-2u3">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2O4-dX-Dbn">
+                        <rect key="frame" x="23" y="6" width="249" height="29.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="2O4-dX-Dbn" secondAttribute="trailing" constant="40" id="CLS-Tg-LKQ"/>
+                    <constraint firstItem="2O4-dX-Dbn" firstAttribute="bottom" secondItem="AVm-h7-2u3" secondAttribute="bottomMargin" id="kJO-ry-4Ke"/>
+                    <constraint firstItem="2O4-dX-Dbn" firstAttribute="top" secondItem="AVm-h7-2u3" secondAttribute="topMargin" constant="-2" id="szk-xr-GX2"/>
+                    <constraint firstItem="2O4-dX-Dbn" firstAttribute="leading" secondItem="AVm-h7-2u3" secondAttribute="leadingMargin" constant="15" id="wv9-vS-nxd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="MyLabel" destination="2O4-dX-Dbn" id="FER-jL-PvK"/>
+            </connections>
+            <point key="canvasLocation" x="373" y="323"/>
+        </tableViewCell>
+    </objects>
+</document>

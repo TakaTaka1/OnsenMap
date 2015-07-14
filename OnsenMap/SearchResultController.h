@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchResultController : UIViewController
+@interface SearchResultController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (strong,nonatomic) NSMutableArray *allData;
 @property (strong,nonatomic,readonly) NSMutableArray *searchedResult;
 -(void)query:(NSString *)query;
+@property (strong,nonatomic) NSMutableArray *inf2;
+
+
 //add
 
 @end

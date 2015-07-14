@@ -10,6 +10,9 @@
 
 
 @interface ViewController : UIViewController
+
+@property (strong,nonatomic) NSMutableArray *inf;
+
 //{NSArray *inf;
 // NSMutableArray *searchData;
 //    

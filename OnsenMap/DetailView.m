@@ -31,7 +31,6 @@
     
     btn.frame=CGRectMake(190, 510, 60, 60);
     
-    
     UIImage *btn_1=[UIImage imageNamed:@"oomoriyu.jpg"];
     
     [btn setBackgroundImage:btn_1 forState:UIControlStateNormal];
@@ -45,14 +44,12 @@
 
 
 -(void)pushed_btn: (id)sender{
-    
+
     
     NSLog(@"tap");
     
     
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -68,5 +65,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end
